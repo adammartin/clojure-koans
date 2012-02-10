@@ -21,12 +21,12 @@
   (= '(1 9 25 49 81)
      (map (fn [index] (* index index))
           (filter odd? (range 10)))
-     (for [index (range 10) :when __]
-       __))
+     (for [index (range 10) :when (odd? index)]
+       (* index index)))
 
   "More complex transformations can be formed with multiple binding forms"
   (= [[:top :left] [:top :middle] [:top :right]
       [:middle :left] [:middle :middle] [:middle :right]
       [:bottom :left] [:bottom :middle] [:bottom :right]]
        (for [row [:top :middle :bottom] column [:left :middle :right]]
-         __)))
+         [row column])))
