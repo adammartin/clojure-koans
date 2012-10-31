@@ -1,4 +1,2 @@
-(load "path_to_answer_sheet")
-(do
-  (in-ns 'path-to-answer-sheet)
-  (run))
+(require 'koan-engine.runner)
+(koan-engine.runner/exec "test")
